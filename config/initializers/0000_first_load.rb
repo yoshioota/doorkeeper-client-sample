@@ -1,0 +1,2 @@
+
+OmniAuth::Strategies::Doorkeeper.name

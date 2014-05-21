@@ -1,0 +1,12 @@
+%div{style: 'clear: both;'}
+
+  - if current_user
+    %h3 Sign in first to explore the provider's API
+    %p= link_to "Link OAuth Provider Sample", user_omniauth_authorize_path(:doorkeeper), :class => "btn primary"
+
+    - if current_user.doorkeeper_oauth
+      %div
+        Oauth Provider Info
+        %pre= current_user.doorkeeper_oauth.params_hash
+      %div
+        = link_to 'Provider Application Articles', articles_path

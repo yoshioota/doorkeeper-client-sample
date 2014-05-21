@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title DoorkeeperClientSample
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    %div{style: 'float: left;'}
+      Oauth Client Sample
+
+    %div{style: 'float: right;'}
+      - if ! current_user
+        = link_to 'Sign In', new_user_session_path
+      - else
+        ようこそ #{current_user.email} さん
+        &nbsp;|&nbsp;
+        = link_to "Sign out", destroy_user_session_path, :class => "btn primary", method: :delete
+    = yield

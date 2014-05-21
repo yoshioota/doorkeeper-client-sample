@@ -35,6 +35,23 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'haml-rails'
+
+gem 'dotenv'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'rails-footnotes'
+  gem 'rails_view_annotator'
+
+  gem 'letter_opener'
+
+  gem 'rack-mini-profiler'
+end
